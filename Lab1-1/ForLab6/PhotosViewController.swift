@@ -87,7 +87,7 @@ extension PhotosViewController: UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let newImage = info[.originalImage] as? UIImage else { return }
+        guard (info[.originalImage] as? UIImage) != nil else { return }
         collectionView.reloadData()
     }
         
